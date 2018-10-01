@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const yelp = require('yelp-fusion');
-const port = 3000
+const port = process.env.PORT || 3000
 const keys = require("./key.js");
 
 const client = yelp.client(keys.apiKey.apiKey);
