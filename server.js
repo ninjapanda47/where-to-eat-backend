@@ -2,9 +2,9 @@ const express = require('express')
 const app = express()
 const yelp = require('yelp-fusion');
 const port = process.env.PORT || 3000
-const keys = require("./key.js");
+require('dotenv').config();
 
-const client = yelp.client(keys.apiKey.apiKey);
+const client = yelp.client(process.env.API_KEY);
 
 const getRandom = max => {
   return Math.floor(Math.random() * Math.floor(max));
